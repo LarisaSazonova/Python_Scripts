@@ -1,20 +1,22 @@
-#проверка ввода integer, причем строка, в которой
-#только цифра, пропускается
+#проверка ввода integer, причем строку, в которой
+#только цифра, функция принимает
 
-def CheckAge (x):
-    if type(x) != int and type(int(x)) != int:
+from logging import exception
+
+
+def check_age (age):
+
+    try:
+        age = int(age)
+    except ValueError:
         print("Please put an integer")
         return
 
-    x = int(x)
-
-    if x < 18:
-        print("You don’t have access cause your age is " + str(x) + ". It’s less then 18")
-    elif x >= 18 and x <= 60:
+    if age < 18:
+        print(f"You don’t have access cause your age is {age}. It is less then 18")
+    elif 18 <= age <= 60:
         print("Welcome!")
-    elif x > 60:
+    elif age > 60:
         print("Keep calm and look Culture channel")
-    else:
-        print("Technical work")
 
-print(CheckAge("1"))
+check_age(2)
