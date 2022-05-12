@@ -1,9 +1,6 @@
 #проверка ввода integer, причем строку, в которой
 #только цифра, функция принимает
 
-from logging import exception
-
-
 def check_age (age):
 
     try:
