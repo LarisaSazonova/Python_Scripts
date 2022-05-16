@@ -76,5 +76,5 @@ const users = [
         lastName: 'Smith',
         phone: '700000037634',
         registrationDate: '12.10.2021'
-    },
+    }
 ];
