@@ -1,4 +1,3 @@
-from array import ArrayType
 import json
 
 with open('task1.txt', 'r') as file:
