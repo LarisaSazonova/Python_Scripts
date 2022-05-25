@@ -24,8 +24,6 @@ def find_max_id():
 
     return max_id
 
-print(find_max_id())
-
 
 # Задание 1 (Вывести все предприятия и их отделы. Рядом указать количество сотрудников. 
 # Для предприятия посчитать сумму всех сотрудников во всех отделах)
@@ -87,52 +85,40 @@ print(add_department(1, "QA отдел"))
 
 def change_enterprise_name (enterprise_id, new_name):
     
-    def iterate():
-        for enterprise in data_json:
-            if enterprise["id"] == enterprise_id:
-                enterprise["name"] = new_name
-                return data_json
+    for enterprise in data_json:
+        if enterprise["id"] == enterprise_id:
+            enterprise["name"] = new_name
+            return data_json
 
-    if iterate():
-        return data_json
-    else:
-        return "No such enterprise"
+    return "No such enterprise"
 
-print(change_enterprise_name(21, "Новое предприятие"))
+print(change_enterprise_name(1, "Новое предприятие!!!"))
 
 # Задание 6 (Написать функцию для редактирования названия отдела.
 # Принимает в качестве аргумента id отдела и новое имя отдела)
 
 def change_department_name (department_id, new_name):
 
-    def iterate():
-        for enterprise in data_json:
-            for dept in enterprise["departments"]:
-                if dept["id"] == department_id:
-                    dept["name"] = new_name
-                    return data_json
+    for enterprise in data_json:
+        for dept in enterprise["departments"]:
+            if dept["id"] == department_id:
+                dept["name"] = new_name
+                return data_json
 
-    if iterate():
-        return data_json
-    else:
-        return "No such department"
+    return "No such department"
 
-print(change_department_name(6, "Новый отдел"))
+print(change_department_name(16, "НОВЫЙ ОТДЕЛ"))
 
 # Задание 7 (Написать функцию для удаления предприятия. В качестве аргумента принимает id предприятия)
 
 def delete_enterprise (enterprise_id):
     
-    def iterate():
-        for enterprise in data_json:
-            if enterprise["id"] == enterprise_id:
-                data_json.remove(enterprise)
-                return data_json
+    for enterprise in data_json:
+        if enterprise["id"] == enterprise_id:
+            data_json.remove(enterprise)
+            return data_json
 
-    if iterate():
-        return data_json
-    else:
-        return "No such enterprise"
+    return "No such enterprise"
 
 #print(delete_enterprise(5))
 
@@ -141,17 +127,13 @@ def delete_enterprise (enterprise_id):
 
 def delete_department (department_id):
 
-    def iterate():
-        for enterprise in data_json:
-            for dept in enterprise["departments"]:
-                if dept["id"] == department_id and dept["employees_count"] == 0:
-                    enterprise["departments"].remove(dept)
-                    return data_json
+    for enterprise in data_json:
+        for dept in enterprise["departments"]:
+            if dept["id"] == department_id and dept["employees_count"] == 0:
+                enterprise["departments"].remove(dept)
+                return data_json
 
-    if iterate():
-        return data_json
-    else:
-        return "No such department"
+    return "No such department"
 
 #print(delete_department(10))
 
@@ -159,31 +141,25 @@ def delete_department (department_id):
 # (В качестве аргумента принимает два значения: id отдела, из которого будут переноситься 
 # сотрудники, и id отдела, в который будут переноситься сотрудники)
 
-def move_employees (department_id_old, department_id_new):
+def move_employees (source_dept_id, target_dept_id):
 
-    def iterate():
-        
-        for enterprise in data_json:
-            dept_destination = None
-            dept_source = None
+    
+    for enterprise in data_json:
+        source_dept_ref = None
+        target_dept_ref = None
 
-            for dept in enterprise["departments"]:
-                if dept["id"] == department_id_old:
-                    dept_source = dept
+        for dept in enterprise["departments"]:
+            if dept["id"] == source_dept_id:
+                source_dept_ref = dept
 
-                if dept["id"] == department_id_new:
-                    dept_destination = dept
+            if dept["id"] == target_dept_id:
+                target_dept_ref = dept
 
-            if dept_destination and dept_source:
-                dept_destination["employees_count"] = dept_source["employees_count"] + dept_destination["employees_count"]
-                dept_source["employees_count"] = 0
+            if target_dept_ref and source_dept_ref:
+                target_dept_ref["employees_count"] = source_dept_ref["employees_count"] + target_dept_ref["employees_count"]
+                source_dept_ref["employees_count"] = 0
                 return data_json
 
-    if iterate():
-        return data_json
-    else:
-        return "No such departments within one enterprise"
+    return "No such departments within one enterprise"
 
-print(move_employees(22, 3))
-
-
+print(move_employees(7, 8))
