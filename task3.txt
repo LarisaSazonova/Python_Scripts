@@ -6,18 +6,18 @@ const enterprises = [
       {
         id: 2,
         name: "Отдел тестирования",
-        employees_count: 10,
+        employees_count: 10
       },
       {
         id: 3,
         name: "Отдел маркетинга",
-        employees_count: 20,
+        employees_count: 20
       },
       {
         id: 4,
         name: "Администрация",
-        employees_count: 15,
-      },
+        employees_count: 15
+      }
     ]
   },
   {
@@ -27,18 +27,18 @@ const enterprises = [
       {
         id: 6,
         name: "Отдел разработки",
-        employees_count: 50,
+        employees_count: 50
       },
       {
         id: 7,
         name: "Отдел маркетинга",
-        employees_count: 20,
+        employees_count: 20
       },
       {
         id: 8,
         name: "Отдел охраны труда",
-        employees_count: 5,
-      },
+        employees_count: 5
+      }
     ]
   },
   {
@@ -48,8 +48,8 @@ const enterprises = [
       {
         id: 10,
         name: "Отдел аналитики",
-        employees_count: 0,
-      },
+        employees_count: 0
+      }
     ]
   }
 ]

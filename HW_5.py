@@ -354,8 +354,6 @@ data_json = [{
     }
 ]
 
-#create function!!!!!
-
 def create_list_of_unique_users (data_json):
     temp_list = [json.dumps(e, sort_keys=True) for e in data_json]
     list_of_unique_users = set(temp_list)
