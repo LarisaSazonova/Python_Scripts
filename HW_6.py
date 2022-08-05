@@ -142,7 +142,6 @@ def delete_department (department_id):
 # сотрудники, и id отдела, в который будут переноситься сотрудники)
 
 def move_employees (source_dept_id, target_dept_id):
-
     
     for enterprise in data_json:
         source_dept_ref = None
