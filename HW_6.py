@@ -120,7 +120,6 @@ def delete_enterprise (enterprise_id):
 
     return "No such enterprise"
 
-#print(delete_enterprise(5))
 
 # Задание 8 (Написать функцию для удаления отдела. В качестве аргумента принимает id отдела. 
 # Удалить отдел можно только, если в нем нет сотрудников)
@@ -135,7 +134,6 @@ def delete_department (department_id):
 
     return "No such department"
 
-#print(delete_department(10))
 
 # Задание 9. Написать функцию для переноса сотрудников между отделами одного предприятия. 
 # (В качестве аргумента принимает два значения: id отдела, из которого будут переноситься 
@@ -161,4 +159,3 @@ def move_employees (source_dept_id, target_dept_id):
 
     return "No such departments within one enterprise"
 
-print(move_employees(7, 8))
